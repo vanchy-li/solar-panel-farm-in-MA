@@ -1,5 +1,4 @@
-# Finding Solar Panel Farms in Massachusetts
-Solar segmentation [![Build Status](https://travis-ci.com/gabrieltseng/solar-panel-segmentation.svg?branch=master)](https://travis-ci.com/gabrieltseng/solar-panel-segmentation)
+# Finding Solar Panel Farms in Massachusetts [![Build Status](https://github.com/vanchy-li/solar-panel-farm-in-MA)](https://github.com/vanchy-li/solar-panel-farm-in-MA)
 
 Finding solar panels using USGS satellite imagery.
 
