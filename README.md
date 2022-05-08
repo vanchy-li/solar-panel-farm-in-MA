@@ -29,22 +29,8 @@ In order to run this pipeline, follow the instructions in the [data readme](data
 
 [Python Fire](https://github.com/google/python-fire) is used to generate command line interfaces.
 
-#### 3.1. Make masks
 
-This step goes through all the polygons defined in `metadata/polygonVertices_PixelCoordinates.csv`, and constructs masks
-for each image, where `0` indicates background and `1` indicates the presence of a solar panel.
-
-```bash
-python run.py make_masks
-```
-This step takes quite a bit of time to run. Using an `AWS t2.2xlarge` instance took the following times for each city:
-
-- Fresno: 14:32:09
-- Modesto: 41:48
-- Oxnard: 1:59:20
-- Stockton: 3:16:08
-
-#### 3.2. Split images
+#### 3.1. Split images and make masks
 
 This step breaks the `[5000, 5000]` images into `[224, 224]` images. To do this, [`polygonDataExceptVertices.csv`](data/metadata/polygonDataExceptVertices.csv)
 is used to identify the centres of solar panels. This ensures the model will see whole solar panels during the segmentation step.
@@ -61,7 +47,7 @@ This yields the following images (examples with panels above, and without below)
 
 <img src="diagrams/negative_splits.png" alt="examples without panels" height="200px"/>
 
-#### 3.3. Train classifier
+#### 3.2. Train classifier
 
 This step trains and saves the classifier. In addition, the test set results are stored for future analysis.
 
@@ -69,7 +55,7 @@ This step trains and saves the classifier. In addition, the test set results are
 python run.py train_classifier
 ```
 
-#### 3.4. Train segmentation model
+#### 3.3. Train segmentation model
 
 This step trains and saved the segmentation model. In addition, the test set results are stored for future analysis.
 By default, this step expects the classifier to have been run, and will try to use it as a pretrained base.
@@ -82,6 +68,9 @@ model, by running
 ```bash
 python run.py train_both
 ```
+
+#### 3.4. Predict solar panel images
+
 
 ## 4. Setup
 
