@@ -17,10 +17,8 @@ in a `[224, 224]` image.
 
 Here is the output of prediction image.
 
-<img src="diagrams/prediction1.png" alt="segmentation results" height="250px"/>
-<img src="diagrams/prediction2.png" alt="segmentation results" height="250px"/>
-<img src="diagrams/prediction3.png" alt="segmentation results" height="250px"/>
-<img src="diagrams/prediction4.png" alt="segmentation results" height="250px"/>
+<img src="diagrams/prediction1.png" alt="segmentation results" height="250px"/> <img src="diagrams/prediction2.png" alt="segmentation results" height="250px"/>
+<img src="diagrams/prediction3.png" alt="segmentation results" height="250px"/> <img src="diagrams/prediction4.png" alt="segmentation results" height="250px"/>
 
 ## 3. Pipeline
 
