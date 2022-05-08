@@ -1,6 +1,6 @@
 # Finding Solar Panel Farms in Massachusetts 
 
-This model is modified and developed from [solar-panel-segmentation].(https://github.com/gabrieltseng/solar-panel-segmentation)
+This model is modified and developed from [solar-panel-segmentation](https://github.com/gabrieltseng/solar-panel-segmentation).
 
 ## 1. Introduction
 
