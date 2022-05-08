@@ -15,17 +15,12 @@ in a `[224, 224]` image.
 
 ## 2. Results
 
-The classifier was trained on 80% of the data, with 10% being used for validation and 10% being used as a holdout test set.
-On this test set, with a threshold of `0.5` differentiating positive and negative examples, the model achieved a **precision
-of 98.8%**, and a **recall of 97.7%**. This is competitive with [DeepSolar](http://web.stanford.edu/group/deepsolar/home) 
-(precision of 93.1% - 93.7%, and recall of 88.5% - 90.5%) despite being trained on a smaller, publically available dataset.
+Here is the output of prediction image.
 
-<img src="diagrams/test_auc_roc.png" alt="AUC ROC results" height="400px"/>
-
-The segmentation model achieved a [Dice coefficient](https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient)
-of 0.89:
-
-<img src="diagrams/segmentation_predictions.png" alt="segmentation results" height="500px"/>
+<img src="diagrams/prediction1.png" alt="segmentation results" height="250px"/>
+<img src="diagrams/prediction1.png" alt="segmentation results" height="250px"/>
+<img src="diagrams/prediction1.png" alt="segmentation results" height="250px"/>
+<img src="diagrams/prediction1.png" alt="segmentation results" height="250px"/>
 
 ## 3. Pipeline
 
