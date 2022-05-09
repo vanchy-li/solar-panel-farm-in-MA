@@ -14,17 +14,17 @@ import rasterio
 
 # Load model and its weights
 model = Segmenter()
-segmenter_sd = torch.load('C:/clark/GEOG387/solar_panel/solar-panel-segmentation/data/models/segmenter.model')
+segmenter_sd = torch.load('../data/models/segmenter.model')
 model.load_base(segmenter_sd)
 # model.double() # also make the model parameters to 'double' type
 
 # Load data X
 
-processed_folder = 'C:/clark/GEOG387/project/data/processed/all_org'
+processed_folder = '../data/processed/all_org'
 tifs = glob.glob(os.path.join(processed_folder,"*"))
 print(tifs)
 
-out_folder = 'C:/clark/GEOG387/project/data/processed/mass_y/'
+out_folder = '../data/processed/mass_y/'
 
 for tif in tifs:
     basename = os.path.basename(tif)

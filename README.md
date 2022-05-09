@@ -62,7 +62,7 @@ This yields the following images (examples with panels above, and without below)
 
 #### 3.2. Train classifier
 
-This step trains and saves the classifier. In addition, the test set results are stored for future analysis.
+This step trains and saves the classifier. 
 
 ```bash
 python run.py train_classifier
@@ -70,8 +70,7 @@ python run.py train_classifier
 
 #### 3.3. Train segmentation model
 
-This step trains and saved the segmentation model. In addition, the test set results are stored for future analysis.
-By default, this step expects the classifier to have been run, and will try to use it as a pretrained base.
+This step trains and saved the segmentation model. By default, this step expects the classifier to have been run, and will try to use it as a pretrained base.
 ```bash
 python run.py train_segmenter
 ```
@@ -84,6 +83,12 @@ python run.py train_both
 
 #### 3.4. Predict solar panel images
 
+After generating the segmentation model, use following files for detecting solar panel for each chip and mosaic them into a whole image. chips are store in `../data/processed/all_org`
+
+```bash
+python predict.py
+python mosaic.py
+```
 
 ## 4. Setup
 
@@ -98,20 +103,4 @@ activate this environment, run
 
 ```bash
 conda activate solar
-```
-
-This pipeline can be tested by running `pytest`.
-
-[Docker](https://www.docker.com/) can also be used to run this code. To do this, first build the docker image:
-
-```bash
-docker build -t solar .
-```
-
-Then, use it to run a container, mounting the data folder to the container:
-
-```bash
-docker run -it \
---mount type=bind,source=<PATH_TO_DATA>,target=/solar/data \
-solar /bin/bash
 ```

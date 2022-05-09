@@ -5,8 +5,8 @@ import glob
 import os
 
 # Read all tif files' path into a list
-dirpath = r"C:/clark/GEOG387/project/data/processed/mass_y"
-out_fp = r"C:/clark/GEOG387/project/data/processed/y-output/shapelet_Mosaic003.tif"
+dirpath = r"../data/processed/mass_y"
+out_fp = r"../data/processed/y-output/predict.tif"
 search_criteria = "*.tif"
 q = os.path.join(dirpath, search_criteria)
 tif_fps = glob.glob(q)

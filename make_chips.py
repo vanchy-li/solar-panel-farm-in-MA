@@ -374,11 +374,11 @@ if __name__ == '__main__':
     i = MakeChips('C:/clark/GEOG387/project/s2/s2_solarpane_12bands.tif')
     i.chip_format = 'tif'
     i.read_polygons('C:/clark/GEOG387/project/solar_3states/solar_clip_naip.shp')
-    i.set_outfolder_bands('C:/clark/GEOG387/project/data/processed/all_org')
-    i.set_outfolder_bands_yes('C:/clark/GEOG387/project/data/processed/solar/org')
-    i.set_outfolder_bands_no('C:/clark/GEOG387/project/data/processed/empty/org')
-    i.set_outfolder_label_yes('C:/clark/GEOG387/project/data/processed/solar/mask')
-    i.set_outfolder_label_no('C:/clark/GEOG387/project/data/processed/empty/mask')
+    i.set_outfolder_bands('../data/processed/all_org')
+    i.set_outfolder_bands_yes('../data/processed/solar/org')
+    i.set_outfolder_bands_no('../data/processed/empty/org')
+    i.set_outfolder_label_yes('../data/processed/solar/mask')
+    i.set_outfolder_label_no('../data/processed/empty/mask')
     # i.chip_format='npy'
     # # print('*'*50)
     i.print_settings()
