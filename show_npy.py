@@ -15,9 +15,9 @@ base_dir = 'C:/clark/GEOG387/solar_panel/solar-panel-segmentation/data/models'
 for i in range(10):
     print((i+1))
 #img_id = int(input("Enter image id: "))
-    img_org = np.load(os.path.join(base_dir,'segmenter_images.npy'))[i+10].transpose(1,2,0)[:, :, 1:4]/50
-    img_pred = np.load(os.path.join(base_dir,'segmenter_preds.npy'))[i+10]
-    img_true = np.load(os.path.join(base_dir,'segmenter_true.npy'))[i+10]
+    img_org = np.load(os.path.join(base_dir,'segmenter_images.npy'))[i].transpose(1,2,0)[:, :, 1:4]/50
+    img_pred = np.load(os.path.join(base_dir,'segmenter_preds.npy'))[i]
+    img_true = np.load(os.path.join(base_dir,'segmenter_true.npy'))[i]
 # print(img_org.shape)
 #exit()
 # img = np.load('C:/clark/GEOG387/solar_panel/solar-panel-segmentation/data/processed/empty/org/Fresno_8.npy').transpose(1, 2, 0)#os.path.join(base_dir,'Fresno_0.npy')

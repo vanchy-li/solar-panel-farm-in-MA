@@ -32,13 +32,24 @@ In order to run this pipeline, follow the instructions in the [data readme](data
 
 #### 3.1. Split images and make masks
 
-This step breaks the `[5000, 5000]` images into `[224, 224]` images. To do this, [`polygonDataExceptVertices.csv`](data/metadata/polygonDataExceptVertices.csv)
-is used to identify the centres of solar panels. This ensures the model will see whole solar panels during the segmentation step.
-
-Negative examples are taken by randomly sampling the image, and ensuring no solar panels are present in the randomly sampled example.
+This step breaks the downloaded Sentinel-2 images into `[224, 224]` chips. To do this,[`make_chips.py`](make_chips.py) is used for spliting images and creating label images. Inside the code, change the paths as following:
 
 ```bash
-python run.py split_images
+i = MakeChips('the path to the downloaded Sentinel Image')
+i.chip_format = 'tif' # choose 'tif' or 'npy' will produce chips with corresponding format
+i.read_polygons('the path to the solar panel vector data')
+# create following folders
+i.set_outfolder_bands('../data/processed/all_org')
+i.set_outfolder_bands_yes('../data/processed/solar/org')
+i.set_outfolder_bands_no('../data/processed/empty/org')
+i.set_outfolder_label_yes('../data/processed/solar/mask')
+i.set_outfolder_label_no('../data/processed/empty/mask')
+```
+
+run the file below:
+
+```bash
+python make_chips.py
 ```
 
 This yields the following images (examples with panels above, and without below):
@@ -46,6 +57,8 @@ This yields the following images (examples with panels above, and without below)
 <img src="diagrams/positive_splits.png" alt="examples with panels" height="200px"/>
 
 <img src="diagrams/negative_splits.png" alt="examples without panels" height="200px"/>
+
+
 
 #### 3.2. Train classifier
 
