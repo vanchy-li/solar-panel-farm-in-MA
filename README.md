@@ -5,7 +5,7 @@ This model is modified and developed from [solar-panel-segmentation](https://git
 ## 1. Introduction
 
 This repository leverages the [distributed solar photovoltaic array location and extent dataset for remote sensing object identification](https://www.nature.com/articles/sdata2016106)
-to train a segmentation model which identifies the locations of solar panels from satellite imagery.
+to train a segmentation model which identifies the locations of solar panels from satellite imagery located in Massachusetts.
 
 Training happens in two steps:
 
@@ -22,10 +22,7 @@ Here is the output of prediction image.
 
 ## 3. Pipeline
 
-The main entrypoint into the pipeline is [`run.py`](solarnet/run.py). Note that each component reads files from the 
-previous step, and saves all files that later steps will need, into the [`data`](data) folder.
-
-In order to run this pipeline, follow the instructions in the [data readme](data/README.md) to download the data.
+The Sentinel-2 data could be downloaded in [Google Earth Engine](https://code.earthengine.google.com/?scriptPath=users%2Fwliccust%2Fvali%3AGEOG387%2Fdownload_s2) and the vectorized solar panel shapefile could also be downloaded in [onedrive](https://1drv.ms/u/s!Ar1fQK1JBXlIhm8XVm7lLV3GzzCm?e=TrMque).
 
 [Python Fire](https://github.com/google/python-fire) is used to generate command line interfaces.
 
@@ -36,7 +33,8 @@ This step breaks the downloaded Sentinel-2 images into `[224, 224]` chips. To do
 
 ```bash
 i = MakeChips('the path to the downloaded Sentinel Image')
-i.chip_format = 'tif' # choose 'tif' or 'npy' will produce chips with corresponding format
+i.chip_format = 'tif' # choose 'tif' or 'npy' will produce chips with corresponding format, run.py requires 'npy' and 
+predict.py requires 'tif'
 i.read_polygons('the path to the solar panel vector data')
 # create following folders
 i.set_outfolder_bands('../data/processed/all_org')
