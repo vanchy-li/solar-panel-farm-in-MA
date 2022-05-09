@@ -54,9 +54,9 @@ python make_chips.py
 
 This yields the following images (examples with panels above, and without below):
 
-<img src="diagrams/positive_splits.png" alt="examples with panels" height="200px"/>
+<img src="diagrams/positive_split_1.png" alt="examples with panels" height="200px"/><img src="diagrams/positive_split_2.png" alt="examples with panels" height="200px"/>
 
-<img src="diagrams/negative_splits.png" alt="examples without panels" height="200px"/>
+<img src="diagrams/negative_split_1.png" alt="examples without panels" height="200px"/><img src="diagrams/negative_split_2.png" alt="examples without panels" height="200px"/>
 
 
 
